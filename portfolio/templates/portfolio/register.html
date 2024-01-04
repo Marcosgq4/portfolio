@@ -1,0 +1,29 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="register-container">
+    <h2>Register</h2>
+    <form method="post" action="{% url 'register' %}?next={{ next_url }}" autocomplete="off">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn-log-reg" type="submit">Register</button>
+    </form>
+
+    <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+</div>
+<script>
+    window.onload = function() {
+        var usernameField = document.getElementById("{{ form.username.id_for_label }}");
+        var passwordField = document.getElementById("{{ form.password.id_for_label }}");
+
+        if (usernameField) {
+            usernameField.value = "";
+        }
+        if (passwordField) {
+            passwordField.value = "";
+        }
+    };
+</script>
+    
+{% endblock %}

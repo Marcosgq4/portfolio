@@ -1,0 +1,41 @@
+{% extends "tasks/layout.html" %}
+
+{% block content %}
+<div class="add-task-container">
+    <!-- Content of the 'Add Task' page -->
+
+    <h1>Add Task</h1>
+    <form method="post">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" class="form-control" name="title" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea class="form-control" name="description" required></textarea>
+        </div>
+        
+        <div class="form-group">
+            <label for="due_date">Due Date:</label>
+            <input type="date" class="form-control" name="due_date" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="importance">Importance:</label>
+            <select class="form-control" name="importance">
+                <option value="most_important">Most Important</option>
+                <option value="very_important">Very Important</option>
+                <option value="important">Important</option>
+                <option value="not_important">Not Important</option>
+            </select>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Add Task</button>
+    </form>
+    <a href="{% url 'task_manager:task_list' %}" class="btn btn-secondary mt-2">Cancel</a>
+    
+</div>
+{% endblock %}

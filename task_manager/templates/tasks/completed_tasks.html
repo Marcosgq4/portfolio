@@ -1,0 +1,27 @@
+{% extends "tasks/layout.html" %}
+
+{% block content %}
+
+<h1>Completed Tasks</h1>
+
+<div class="most-important-tasks">
+    <h2>Most Important Completed Tasks</h2>
+    {% include 'tasks/task_table.html' with tasks=completed_task_categories.most_important_tasks %}
+</div>
+
+<div class="very-important-tasks">
+    <h2>Very Important Completed Tasks</h2>
+    {% include 'tasks/task_table.html' with tasks=completed_task_categories.very_important_tasks %}
+</div>
+
+<div class="important-tasks">
+    <h2>Important Completed Tasks</h2>
+    {% include 'tasks/task_table.html' with tasks=completed_task_categories.important_tasks %}
+</div>
+
+<div class="not-important-tasks">
+    <h2>Not Important Completed Tasks</h2>
+    {% include 'tasks/task_table.html' with tasks=completed_task_categories.not_important_tasks %}
+</div>
+
+{% endblock %}

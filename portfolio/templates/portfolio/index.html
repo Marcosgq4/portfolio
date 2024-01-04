@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Marcos's Portfolio</title>
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'portfolio/img/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'portfolio/img/favicon.png' %}">
+
+    <link href="{% static 'portfolio/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'portfolio/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'portfolio/css/responsive.css' %}" rel="stylesheet">
+
+</head>
+<body>
+
+    <header id="masthead" class="site-header" data-anchor-target=".hero" data-top="background: rgba(255,255,255,0); padding: 30px 0; box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0);" data-top-bottom="background: rgba(255,255,255,1); padding: 10px 0; box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.2);">
+        <nav id="primary-navigation" class="site-navigation">
+            <div class="container">
+                <div class="navbar-header page-scroll">
+
+                    <button type="button" class="navbar-toggle collapsed" data-target="#portfolio-perfect-collapse" aria-expanded="false" >
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                    <a href="#hero" class="site-logo"><img src="{% static 'portfolio/img/logo.png' %}" alt="logo"></a>
+
+                </div>
+
+                <div class="main-menu" id="portfolio-perfect-collapse">
+
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li class="page-scroll"><a href="#hero">Home</a></li>
+                        <li class="page-scroll"><a href="#about">About</a></li>
+                        <li class="page-scroll"><a href="#service">Service</a></li>
+                        <li class="page-scroll"><a href="#portfolio">Portfolio</a></li>
+                        <li class="page-scroll"><a href="#resume">Resume</a></li>
+                        {% if user.is_authenticated %}
+                            <li><a href="{% url 'logout' %}">Logout</a></li>
+                        {% else %}
+                            <li><a href="{% url 'login' %}">Login</a></li>
+                            <li><a href="{% url 'register' %}">Register</a></li>
+                        {% endif %}
+                                        
+                    </ul>
+
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <div id="hero" class="hero">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-6">
+                    <h1>Marcos Gomez</h1>
+                    <div class="page-scroll">
+                        <p class="job-title">Full Stack Developer</p>
+                        <a href="https://www.linkedin.com/in/marcos-gomez-706bb21b4" class="btn btn-fill" target="_blank">LINKEDIN</a>
+                        <div class="clearfix visible-xxs"></div>
+                        <a href="#portfolio" class="btn btn-border">Projects</a>
+                    </div>
+                </div>
+            
+                <div class="col-md-6 text-right">
+                    <img src="{% static "portfolio/img/Coder_transparent.png" %}" alt="picture-of-marcos">
+                </div>
+
+            </div>
+        </div>
+    </div><!-- /.hero -->
+
+    <main id="main" class="site-main">
+
+        <section id="about" class="site-section section-about text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <h2>About</h2>
+                        <img src="{% static 'portfolio/img/lines.svg' %}" class="img-lines" alt="lines">
+                        <p>Greetings! I'm Marcos, a versatile full-stack developer with a chemistry background, blending rigorous analysis with programming prowess. Educated at Florida International University and certified by Harvard, my expertise spans Python, Java, C, Flask, Django, and JavaScript.</p>
+                        <p>From academic achievements to leading teams at Amazon, I excel in both code and leadership. I relish new tech challenges and am ready to elevate your projects with a distinct mix of scientific acumen and software development.</p>
+                        <p>Interested in a unique perspective for your next project? Connect with me and let’s make it happen!</p>
+                        <a href="https://www.linkedin.com/in/marcos-gomez-706bb21b4" class="btn btn-fill" target="_blank">CONNECT ON LINKEDIN</a>
+                    </div>
+                </div>
+            </div>
+        </section>W
+
+        <section class="site-section section-skills">
+            <div class="container">
+                <div class="text-center">
+                    <h3>My Skills</h3>
+                    <img src="{% static 'portfolio/img/lines.svg' %}" class="img-lines" alt="lines">
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="skill">
+                            <h4>Html/css</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-transitiongoal="70"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <h4>Python</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-transitiongoal="82"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="skill">
+                            <h4>Javascript</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-transitiongoal="72"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <h4>Django</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-transitiongoal="78"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="skill">
+                            <h4>C</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-transitiongoal="60"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <h4>Java</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-transitiongoal="50"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="service" class="site-section section-services overlay text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>What i do</h3>
+                        <img src="{% static 'portfolio/img/lines.svg' %}" class="img-lines" alt="lines">
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="service">
+                            <img src="{% static 'portfolio/img/front-end.svg' %}" alt="Front End Developer">
+                            <h4>Front-end</h4>
+                            <p>Crafting intuitive and dynamic user interfaces with HTML, CSS, and JavaScript, ensuring a seamless user experience across all devices.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="service">
+                            <img src="{% static 'portfolio/img/back-end.svg' %}" alt="Back End Developer">
+                            <h4>Back-end</h4>
+                            <p>Building robust server-side logic with Python and Django, managing databases, and implementing APIs for scalable web applications.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="service">
+                            <img src="{% static 'portfolio/img/leadership.png' %}" alt="Leadership and Management" class="icon-custom">
+                            <h4>Leadership</h4>
+                            <p>Guiding teams to operational excellence at Amazon, leveraging strategic planning and a focus on efficiency and team development.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="service">
+                            <img src="{% static 'portfolio/img/atom2.png' %}" alt="Science and Research" class="icon-custom">
+                            <h4>Research</h4>
+                            <p>Applying the scientific method to solve complex problems, with a detail-oriented approach to research and data analysis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="site-section section-portfolio">
+            <div class="container">
+                <div class="text-center">
+                    <h3>My recent Works</h3>
+                    <img src="{% static 'portfolio/img/lines.svg' %}" class="img-lines" alt="lines">
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            <img src="{% static 'portfolio/img/portfolio-1.jpg' %}" class="img-res" alt="">
+                            <div class="portfolio-item-info">
+                                <h4>Task Manager</h4>
+                                <a href="#" data-toggle="modal" data-target="#portfolioItem1"><span class="glyphicon glyphicon-eye-open"></span></a>
+                                <a href="#" class="auth-check" data-project-url="{% url 'task_manager:task_list' %}"><span class="glyphicon glyphicon-link"></span></a>
+                            </div>
+                         </div>
+                    </div>
+                    <div class="col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            <img src="{% static 'portfolio/img/portfolio-2.jpg' %}" class="img-res" alt="">
+                            <div class="portfolio-item-info">
+                                <h4>Network</h4>
+                                <a href="#" data-toggle="modal" data-target="#portfolioItem2"><span class="glyphicon glyphicon-eye-open"></span></a>
+                                <a href="#" class="auth-check" data-project-url="{% url 'network:index' %}"><span class="glyphicon glyphicon-link"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            <img src="{% static 'portfolio/img/portfolio-3.jpg' %}" class="img-res" alt="">
+                            <div class="portfolio-item-info">
+                                <h4>Project Title</h4>
+                                <a href="#" data-toggle="modal" data-target="#portfolioItem3"><span class="glyphicon glyphicon-eye-open"></span></a>
+                                <a href="#"><span class="glyphicon glyphicon-link"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            <img src="{% static 'portfolio/img/portfolio-4.jpg' %}" class="img-res" alt="">
+                            <div class="portfolio-item-info">
+                                <h4>Project Title</h4>
+                                <a href="#" data-toggle="modal" data-target="#portfolioItem4"><span class="glyphicon glyphicon-eye-open"></span></a>
+                                <a href="#"><span class="glyphicon glyphicon-link"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            <img src="{% static 'portfolio/img/portfolio-5.jpg' %}" class="img-res" alt="">
+                            <div class="portfolio-item-info">
+                                <h4>Project Title</h4>
+                                <a href="#" data-toggle="modal" data-target="#portfolioItem5"><span class="glyphicon glyphicon-eye-open"></span></a>
+                                <a href="#"><span class="glyphicon glyphicon-link"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            <img src="{% static 'portfolio/img/portfolio-6.jpg' %}" class="img-res" alt="">
+                            <div class="portfolio-item-info">
+                                <h4>Project Title</h4>
+                                <a href="#" data-toggle="modal" data-target="#portfolioItem6"><span class="glyphicon glyphicon-eye-open"></span></a>
+                                <a href="#"><span class="glyphicon glyphicon-link"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="resume" class="site-section section-form text-center">
+            <div class="container">
+
+                <h3>DOWNLOAD MY RESUME</h3>
+                <div> <img src="{% static 'portfolio/img/lines.svg' %}" class="img-lines" alt="lines">
+
+                </div>
+                <a href="{% static 'portfolio/resume/resume1_24.pdf' %}" class="btn btn-border" download="Marcos_Gomez_Resume">Download Resume <span class="glyphicon glyphicon-download"></span></a>
+                 
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="colophon" class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 col-xs-12">
+                    <a class="icon facebook-bg" href="#"><i class="icon-facebook"></i></a>
+                    <a class="icon twitter-bg" href="#"><i class="icon-twitter"></i></a>
+                    <a class="icon gplus-bg" href="#"><i class="icon-linkedin"></i></a>
+                    <a class="icon linkedin-bg" href="#"><i class="icon-gplus"></i></a>
+                </div>
+                <div class="col-sm-4 col-sm-offset-0 col-xs-6 col-xs-offset-3"><p class="copyright">2017. All Rights Reserved</p></div>
+                <div class="col-sm-4 col-xs-3">
+                    <div class="text-right page-scroll">
+                        <a class="icon icon-up-bg" href="#hero"><i class="icon-up"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <div id="portfolioItem1" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <a class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
+            <img class="img-res" src="{% static 'portfolio/img/portfolio-1.jpg' %}" alt="">
+          </div>
+          <div class="modal-body">
+            <h4 class="modal-title">Task Manager</h4>
+            <p>This is my Task Manager App. This project was my final project to obtain the CS50W certification. The idea behind it was to create an app that could help the user prioritize their tasks. When you create a task for yourself, the program asks you to give it a due date and a level of importance. Then, it will show you all of your tasks, in order, with the most important tasks that are due sooner all the way at the top and the least important tasks that are due later, at the bottom. This would help anyone organyze their work day to accomplish the most important tasks in order of priority. You're also able to complete, update or delete your tasks at any point, if you choose to.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="portfolioItem2" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <a class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
+            <img class="img-res" src="{% static 'portfolio/img/portfolio-2.jpg' %}" alt="">
+          </div>
+          <div class="modal-body">
+            <h4 class="modal-title">Network</h4>
+            <p>This is my Network App. This project had the purpose to create an app resembling a social network. While this app is not as sophisticated as Facebook, it allows every user to create and edit their own posts. These posts are then posted according to their date of creation and paginated so that only a limited amount of them can be shown in each page. You can also follow or unfollow other users, as well as like or unlike their posts, and you can selectively see the posts of the users you follow, rather than watching everything available in the network.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="portfolioItem3" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <a class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
+            <img class="img-res" src="{% static 'portfolio/img/portfolio-3.jpg' %}" alt="">
+          </div>
+          <div class="modal-body">
+            <h4 class="modal-title">Project title</h4>
+            <p>There's nothing here yet. Check again soon for more projects!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="portfolioItem4" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <a class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
+            <img class="img-res" src="{% static 'portfolio/img/portfolio-4.jpg' %}" alt="">
+          </div>
+          <div class="modal-body">
+            <h4 class="modal-title">Project title</h4>
+            <p>There's nothing here yet. Check again soon for more projects!</p>          
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="portfolioItem5" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <a class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
+            <img class="img-res" src="{% static 'portfolio/img/portfolio-5.jpg' %}" alt="">
+          </div>
+          <div class="modal-body">
+            <h4 class="modal-title">Project title</h4>
+            <p>There's nothing here yet. Check again soon for more projects!</p>         
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="portfolioItem6" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <a class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
+            <img class="img-res" src="{% static 'portfolio/img/portfolio-6.jpg' %}" alt="">
+          </div>
+          <div class="modal-body">
+            <h4 class="modal-title">Project title</h4>
+            <p>There's nothing here yet. Check again soon for more projects!</p>         
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Authentication Modal -->
+    <div class="modal fade" id="authModal" tabindex="-1" role="dialog" aria-labelledby="authModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-header">
+            <img class="img-res" src="{% static 'portfolio/img/privacy_matters4.png' %}" alt="Authentication Required">
+        <div class="modal-body" style="background-color: white;">
+            You need to be signed in to view this project.
+        </div>
+        <div class="modal-footer" style="background-color: white;">
+            <a href="#" id="loginButton" class="btn btn-fill">Login</a>
+            <a href="#" id="guestButton" class="btn btn-border">Continue as Guest</a>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="{% static 'portfolio/js/bootstrap.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="{% static 'portfolio/js/skrollr.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-progressbar/0.9.0/bootstrap-progressbar.min.js"></script>
+    <script src="{% static 'portfolio/js/jquery.countTo.min.js' %}"></script>
+    <script>
+        window.isUserAuthenticated = {% if user.is_authenticated %}true{% else %}false{% endif %};
+        console.log(window.isUserAuthenticated);
+    </script>
+    <script> window.loginUrl = "{% url 'login' %}"; </script>
+    <script src="{% static 'portfolio/js/script.js' %}"></script>
+  
+</body>
+</html>

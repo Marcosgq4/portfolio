@@ -1,0 +1,59 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+<div class="profile">
+    <h2>
+        {% if request.session.is_guest %}
+        Guest's Profile
+        {% else %}
+        {{ profile_user.username }}'s Profile
+        {% endif %}
+    </h2>
+    <p id="followers-count">Followers: {{ followers_count }}</p>
+    <p id="following-count">Following: {{ following_count }}</p>
+    
+    {% if profile_user != user %}
+    <button id="follow-button" data-username="{{ profile_user.username }}">
+        {% if is_following %}
+        Unfollow
+        {% else %}
+        Follow
+        {% endif %}
+    </button>
+    {% endif %}
+</div>
+
+<hr>
+
+<div>
+    <h2>
+        {% if request.session.is_guest %}
+        Guest's Posts
+        {% else %}
+        {{ profile_user.username }}'s Posts
+        {% endif %}
+    </h2>
+    {% for post in page_obj %}
+    <div class="post" data-post-id="{{ post.id }}">
+        <strong>{{ post.user.username }}: </strong>
+        <div class="post-content">{{ post.content }}</div>
+        {{ post.timestamp }}<br>
+        <span id="like-count-{{ post.id }}" class="like-count">Likes: {{ post.num_likes }}</span><br>
+        <button class="like-button" data-post-id="{{ post.id }}">
+            {% if user in post.likes.all %}
+                Unlike
+            {% else %}
+                Like
+            {% endif %}
+        </button>
+        {% if post.user == user %}
+        <button class="edit-button">Edit</button>
+        {% endif %}
+    </div>
+
+    {% endfor %}
+    {% include 'network/pagination.html' %}
+</div>
+<script src="{% static 'network/script.js' %}"></script>
+{% endblock %}

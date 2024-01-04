@@ -1,0 +1,234 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+.table {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    min-width: 1200px;
+}
+
+.main-container {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+@media (min-width: 1350px) {
+    .container {
+       max-width: 1350px; 
+    }
+ }
+
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+table td, table th {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+button:hover {
+    color: #fff;
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+button {
+    border-radius: .25rem;
+    margin: 0;
+}
+
+.importance-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-position: right 6px center;
+    background-repeat: no-repeat;
+    background-color: #f4f4f4;
+    color: black;
+    padding-left: .75rem;
+    padding-right: 1.5rem;
+    padding-top: .1rem;
+    padding-bottom: .1rem;
+    border: 2px outset buttonborder;
+    width: auto;
+    height: auto;
+    display: inline-block;
+    font-size: 1rem;
+    border-color: buttonborder;
+    border-radius: .25rem;
+    line-height: 1.5;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');
+}
+
+.importance-select:hover {
+    color: #fff;
+    background-color: #5a6268;
+    border-color: #545b62;
+    cursor: pointer;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23ffffff" viewBox="0 0 16 16"><path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');
+}
+
+.importance-select option {
+    background-color: #f4f4f4;
+    color: black;
+    padding: 8px 10px;
+}
+
+.add-btn {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.navbar-brand {
+    margin-left: 20px;
+}
+
+.col-id {
+    width: 3%;
+}
+
+.col-title {
+    width: 10%;
+}
+
+.col-description {
+    width: 48%;
+}
+
+.col-due-date {
+    width: 11%;
+}
+
+.col-importance {
+    width: 12%;
+}
+
+.col-delete {
+    width: 6%;
+}
+
+.col-status {
+    width: 10%;
+}
+
+table th, table td {
+    padding: 7px 7px;  
+}
+
+.table th, .table td {
+    padding: 7px 7px;
+}
+
+
+
+
+
+
+.add-task-container {
+    max-width: 900px; 
+    margin: 0 auto; 
+}
+
+.add-task-header {
+    text-align: center; 
+    margin-bottom: 20px; 
+}
+
+.add-task-form label, 
+.add-task-form input, 
+.add-task-form textarea, 
+.add-task-form select, 
+.add-task-form button {
+    width: 100%; 
+    margin-bottom: 10px; 
+}
+
+.add-task-form input[type="text"], 
+.add-task-form textarea {
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+}
+
+
+.add-task-cancel {
+    display: block; 
+    width: 100%; 
+    text-align: center; 
+    padding: 10px; 
+    border: none; 
+    background: none; 
+  
+    text-decoration: underline; 
+}
+
+.btn-primary {
+    background-color: #3a3535;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #222129;
+    color: #fff;
+}
+
+.form-control[type="date"] {
+    padding-right: 15px; 
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.log {
+    display: inline-block;
+    width: 100px;  
+    text-align: right;
+    margin-right: 20px; 
+}
+
+.reg {
+    display: inline-block;
+    width: 140px;  
+    text-align: right;
+    margin-right: 20px; 
+}
+
+.btn-log-reg {
+    margin-bottom: 10px;
+}
+
+td.col-title, td.col-description {
+    overflow-wrap: break-word;
+    word-wrap: normal;
+    white-space: normal;
+}
+
+/* mobile stuff */
+
+.scrollable-container {
+    overflow-x: auto;
+}
+
+table td, table th {
+    word-wrap: normal;
+    word-break: normal;
+}
+
+

@@ -1,0 +1,36 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block title %}
+    Following
+{% endblock %}
+
+{% block body %}
+    <h2>Posts by Users You Follow</h2>
+
+    {% if not page_obj %}
+        <p>You are not following anyone or there are no new posts from users you follow.</p>
+    {% else %}
+        {% for post in page_obj %}
+            <div class="post">
+                <strong><a href="{% url 'network:profile' post.user.username %}">{{ post.user.username }}: </a></strong>
+                {{ post.content }}<br>
+                {{ post.timestamp }}<br>
+                <span id="like-count-{{ post.id }}" class="like-count">Likes: {{ post.num_likes }}</span><br>
+                <button class="like-button" data-post-id="{{ post.id }}">
+                    {% if user in post.likes.all %}
+                        Unlike
+                    {% else %}
+                        Like
+                    {% endif %}
+                </button>
+                {% if post.user == user %}
+                <button class="edit-button">Edit</button>
+                {% endif %}
+            </div>
+        {% endfor %}
+        {% include 'network/pagination.html' %}
+    {% endif %}
+
+    <script src="{% static 'network/script.js' %}"></script>
+{% endblock %}

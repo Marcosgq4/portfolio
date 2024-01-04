@@ -1,0 +1,31 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="login-container">
+    <h2>Login</h2>
+    <form method="post" autocomplete="off">
+        {% csrf_token %}
+        <div class="form-group">
+            <label class="log" for="{{ form.username.id_for_label }}">Username:</label>
+            {{ form.username }}
+            {{ form.username.errors }}
+        </div>
+        <div class="form-group">
+            <label class="log" for="{{ form.password.id_for_label }}">Password:</label>
+            {{ form.password }}
+            {{ form.password.errors }}
+        </div>
+        <button class="btn-log-reg" type="submit">Login</button>
+    </form>
+
+    <p>Don't have an account? <a href="{% url 'register' %}?next={{ request.GET.next }}">Register</a></p>
+</div>
+<script>
+    window.onload = function() {
+        document.getElementById("{{ form.username.id_for_label }}").value = "";
+        document.getElementById("{{ form.password.id_for_label }}").value = "";
+    };
+</script>
+    
+{% endblock %}

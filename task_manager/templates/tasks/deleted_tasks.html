@@ -1,0 +1,29 @@
+{% extends "tasks/layout.html" %}
+
+{% block content %}
+
+<h1>Deleted Tasks</h1>
+
+<div class="deleted_tasks">
+    <div class="most-important-tasks">
+        <h2>Most Important Deleted Tasks</h2>
+        {% include 'tasks/task_table.html' with tasks=deleted_task_categories.most_important_tasks %}
+    </div>
+
+    <div class="very-important-tasks">
+        <h2>Very Important Deleted Tasks</h2>
+        {% include 'tasks/task_table.html' with tasks=deleted_task_categories.very_important_tasks %}
+    </div>
+
+    <div class="important-tasks">
+        <h2>Important Deleted Tasks</h2>
+        {% include 'tasks/task_table.html' with tasks=deleted_task_categories.important_tasks %}
+    </div>
+
+    <div class="not-important-tasks">
+        <h2>Not Important Deleted Tasks</h2>
+        {% include 'tasks/task_table.html' with tasks=deleted_task_categories.not_important_tasks %}
+    </div>
+</div>
+
+{% endblock %}
